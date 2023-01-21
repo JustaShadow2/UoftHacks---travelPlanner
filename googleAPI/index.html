@@ -4,7 +4,7 @@
 <head>
     <title>Nearby Restaurants</title>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXAbF5qKwgTOimUE05z41dQzmrNku4ypo&libraries=geometry"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=########&libraries=geometry"></script>
 </head>
 
 <script>
@@ -28,7 +28,7 @@ function initMap() {
   marker2 = new google.maps.Marker({
     map,
     draggable: false,
-    position: { lat: 66.89099359844892, lng: 172.15668750000006 },
+    position: { lat: 45, lng: -90},
   });
 
   const bounds = new google.maps.LatLngBounds(
@@ -73,9 +73,6 @@ function update() {
  
     google.maps.event.addDomListener(window, 'load', initMap)
 
-//(43.68380566915969, -79.33436914062501)
-//(31.867599191768925, -4.327687500000019)
-//(66.89099359844892, 172.15668750000006)
 </script>
 <body>
     <div id="map" style="height: 500px;"></div>
