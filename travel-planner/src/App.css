@@ -3,6 +3,7 @@
   
 }
 
+
 .navbar span{
   padding: 1rem;
   font-size: 2rem;
@@ -28,5 +29,6 @@
   justify-content: center;
   align-items: flex-start;
   font-size: 1.5rem;
+  color: white;
 }
 

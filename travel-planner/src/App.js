@@ -1,16 +1,18 @@
 import './App.css';
-import Searchbar from "./Searchbar"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Searchbar from "./Searchbar";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ContentCard from './ContentCard';
 
 function App() {
   return (
     <div className="App">
       
       <>
-      <Navbar bg="dark" variant="dark" className='navbar'>
+      <Navbar bg="none" variant="dark" className='navbar'>
         <Container>
           <Navbar.Brand href="#home">
           <svg className='navbarlogo' xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-airplane" viewBox="0 0 16 16">
@@ -29,6 +31,10 @@ function App() {
     </Container>
 
     <Searchbar/>
+
+    <ContentCard/>
+
+
 
     </div>
   );
