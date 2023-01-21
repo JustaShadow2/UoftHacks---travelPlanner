@@ -1,0 +1,36 @@
+.Searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.search{
+    padding: 20px;
+}
+
+.button-submit{
+    padding: 0.8rem;  
+    background-color: #5F85DB;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 800;
+}
+
+.search-form{
+    padding-bottom: 1rem;
+    
+}
+
+.Searchbar input{
+    width: 30vw;
+    height: 5vh;
+    text-decoration: none;
+}
+
+.Searchbar input:focus{
+  
+    text-decoration: none;
+}
