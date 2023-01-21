@@ -8,15 +8,20 @@
 
 .search{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .button-submit{
-    padding: 0.8rem;  
+    padding: 0.7rem;  
     background-color: #5F85DB;
     border: none;
     border-radius: 5px;
     color: white;
     font-weight: 800;
+    width: 40%;
+    align-self: center;
+    margin-top: 10px;
 }
 
 .search-form{
@@ -28,6 +33,10 @@
     width: 30vw;
     height: 5vh;
     text-decoration: none;
+    border: none;
+    border-radius: 18px;
+    padding-left: 15px;
+    margin: 10px;
 }
 
 .Searchbar input:focus{

@@ -1,21 +1,67 @@
 import './Searchbar.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { useState } from "react";
+
+
 
 function Searchbar() {
+
+const [start, setStart] = useState("");
+const [end, setEnd] = useState("");
+const [message, setMessage] = useState("");
+
+
+let handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    let res = await fetch('APIendpointURL', {
+      method: "POST", 
+      body: JSON.stringify({
+        start: start,
+        end: end,
+      }),
+    });
+    let resJson = await res.json();
+    if (res.status === 200) {
+      setStart("");
+      setEnd("");
+      setMessage("Details accesed");
+    } else {
+      setMessage("Some error occured");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
   return (
+
+  
     <div className="Searchbar">
       
-    <Form className='search'>
-      <Form.Group className="mb-3 search-form">
-        <Form.Control type="email" placeholder="Where do you want to go next?" />       
-      </Form.Group>
-
+    <form 
+      className='search'
+      onSubmit={handleSubmit}
+    >
+    
+        <input 
+        type="text" 
+        value={start}
+        onChange={(e) => setStart(e.target.value)}
+        placeholder="Where do you want to start?" 
+        />       
+        <input 
+        type="text" 
+        value={end}
+        onChange={(e) => setEnd(e.target.value)}
+        placeholder="Where do you want to go next?" 
+        />       
       
-      <Button className='button-submit' variant="primary" type="submit">
+      <button className='button-submit' variant="primary" type="submit">
         Submit
-      </Button>
-    </Form>
+      </button>
+
+      <div className="message">{message ? <p>{message}</p> : null}</div>
+    </form>
 
     </div>
   );
