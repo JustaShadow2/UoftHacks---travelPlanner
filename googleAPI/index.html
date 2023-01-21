@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nearby Restaurants</title>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXAbF5qKwgTOimUE05z41dQzmrNku4ypo&libraries=geometry"></script>
+</head>
+
+<script>
+    let marker1, marker2;
+let poly, geodesicPoly;
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: { lat: 34, lng: -40.605 },
+  });
+
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+    document.getElementById("info")
+  );
+  marker1 = new google.maps.Marker({
+    map,
+    draggable: false,
+    position: { lat: 43.68380566915969, lng: -79.33436914062501 },
+  });
+  marker2 = new google.maps.Marker({
+    map,
+    draggable: false,
+    position: { lat: 66.89099359844892, lng: 172.15668750000006 },
+  });
+
+  const bounds = new google.maps.LatLngBounds(
+    marker1.getPosition(),
+    marker2.getPosition()
+  );
+
+  map.fitBounds(bounds);
+  google.maps.event.addListener(marker1, "position_changed", update);
+  google.maps.event.addListener(marker2, "position_changed", update);
+  poly = new google.maps.Polyline({
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 3,
+    map: map,
+  });
+  geodesicPoly = new google.maps.Polyline({
+    strokeColor: "#CC0099",
+    strokeOpacity: 1.0,
+    strokeWeight: 3,
+    geodesic: true,
+    map: map,
+  });
+  update();
+}
+
+function update() {
+  const path = [marker1.getPosition(), marker2.getPosition()];
+
+  poly.setPath(path);
+  geodesicPoly.setPath(path);
+
+  const heading = google.maps.geometry.spherical.computeHeading(
+    path[0],
+    path[1]
+  );
+
+  document.getElementById("heading").value = String(heading);
+  document.getElementById("origin").value = String(path[0]);
+  document.getElementById("destination").value = String(path[1]);
+}
+ 
+    google.maps.event.addDomListener(window, 'load', initMap)
+
+//(43.68380566915969, -79.33436914062501)
+//(31.867599191768925, -4.327687500000019)
+//(66.89099359844892, 172.15668750000006)
+</script>
+<body>
+    <div id="map" style="height: 500px;"></div>
+</body>
+</html>
