@@ -8,7 +8,7 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <nav class="navbar bg-body-none">
+    <nav class="navbar bg-body-none nav-style">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <svg className='navbarlogo' xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-airplane" viewBox="0 0 18 18">
@@ -17,6 +17,8 @@
               <span>Travel Planner</span>
           </a>
           <Button class="btn btn-primary mb-3 button-back" onclick="history.back()">Go Back</Button>
+          <Button type = "submit"  class="btn btn-primary mb-3 button-submit">Iternary</Button>
+          <Button type = 'submit'  class="btn btn-primary mb-3 button-submit ">Directions</Button>
           
         </div>
     </nav>
@@ -86,6 +88,7 @@ p span{
     position: absolute;
 }
 
+
 .button-back{
     padding: 0.7rem;  
     background-color: #5F85DB;
@@ -119,7 +122,7 @@ p span{
 
 
 .navbar{
-    padding: 2rem;
+    padding: 0.5rem;
     
   }
   
