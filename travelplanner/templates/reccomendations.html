@@ -11,6 +11,9 @@
 <script>
   let marker1, marker2;
   let poly, geodesicPoly;
+
+  data = localStorage.getItem('name')
+console.log(data)
   
   function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {

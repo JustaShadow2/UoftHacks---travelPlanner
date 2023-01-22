@@ -32,8 +32,8 @@
          <input type = "text" name = "home"  class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where are you located?"/>
          
       <form action = "http://localhost:5000/index" method = "post">
-         <input type = "text" name = "dest" class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where do you want to go?"/>
-         <Button type = "submit"  class="btn btn-primary mb-3 button-submit">Continue</Button>
+         <input id = "destination" type = "text" name = "dest" class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where do you want to go?"/>
+         <Button type = "submit"  class="btn btn-primary mb-3 button-submit" onclick="getInputValue();">Continue</Button>
       </form>
       <!-- <form>
         <Button type = "submit"  class="btn btn-primary mb-3 button-submit">Iternary</Button>
@@ -54,6 +54,21 @@
          </div>
   
      </div> -->
+
+     <script>
+      function getInputValue(){
+          // Selecting the input element and get its value 
+          var inputVal = document.getElementById("destination").value;
+
+          // Displaying the value
+          console.log(inputVal);
+
+          console.log(inputVal);
+      localStorage.setItem('name', inputVal);
+      console.log(localStorage.getItem())
+      }
+
+   </script>
        
  </body>
  </html>
