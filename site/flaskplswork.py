@@ -1,24 +1,34 @@
-from flask import Flask, json
-from flask_cors import CORS
-from flask import request
-
+from flask import Flask, redirect, url_for, request
 app = Flask(__name__)
-CORS(app)
 
-#get data from post request json
-@app.route('/testing', methods=['POST'])
-def testing():
-    data = request.get_json()
-    return json.dumps(data)
+@app.route('/reccomendations/<place>')
+def reccomendations(place):
+#    return 'welcome %s' % place
+    import requests 
+    import json
 
-# #send data to post request json
-# info = {'name': 'John', 'age': 30, 'city': 'New York'}
-# @app.route('/testing', methods=['GET'])
-# def testing():
-#     return json.dumps(info)
+    api_key = "jvFKqmh_l2XRzDI1I9hXuGq0RntzZUhXvuk2lxs9gLFXPaC80uEDBlMyTsHoJYa6aOhDPQDEI8hNUy8COdJdB8gvFv8TIpTGy0teJ5q47SC6643BuQlXRB6_4BzMY3Yx"
+    headers = {'Authorization' : 'Bearer {}'.format(api_key)}
+    destination = place
+    url = 'https://api.yelp.com/v3/businesses/search'
+
+    params = {'term':'food', 'location':destination, 'limit':3, 'sort_by':'rating'}
+
+    req = requests.get(url, params=params, headers=headers)
+
+    parsed = json.loads(req.text)
+
+    return{'name': parsed['businesses'][0]['name'], 'rating': parsed['businesses'][0]['rating'], 'name2': parsed['businesses'][1]['name'], 'rating2': parsed['businesses'][1]['rating'], 'name3': parsed['businesses'][2]['name'], 'rating3': parsed['businesses'][2]['rating']}
+
+
+@app.route('/index',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      dest = request.form['nm']
+      return redirect(url_for('reccomendations',place = dest))
+#    else:
+#       dest = request.args.get('nm')
+#       return redirect(url_for('success',place = dest))
 
 if __name__ == '__main__':
-    app.run()
-
-    #pip install flask
-    #pip install flask-cors
+   app.run(debug = True)
