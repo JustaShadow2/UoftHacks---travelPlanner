@@ -13,7 +13,7 @@ const [message, setMessage] = useState("");
 let handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    let res = await fetch('APIendpointURL', {
+    let res = await fetch('http://127.0.0.1:5000/testing', {
       method: "POST", 
       body: JSON.stringify({
         start: start,
