@@ -1,0 +1,145 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #121212;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+
+.navbar{
+    padding: 2rem;
+    
+  }
+  
+  
+  .navbar span{
+    padding: 1rem;
+    padding-top: 1.5rem; 
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .navbar a{
+    color: #5F85DB !important; 
+  }
+  
+  .navbarlogo{
+    width: 35px;
+    height: 35px; 
+  }
+  
+  .navbarlogo:hover{
+    fill: #64FFDA;
+  }
+  
+  .subhead{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.search{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-submit{
+    padding: 0.7rem;  
+    background-color: #5F85DB;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 800;
+    width: 20%;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.search-form{
+    padding-bottom: 1rem;
+    
+}
+
+input{
+    width: 30vw;
+    height: 5vh;
+    text-decoration: none;
+    border: none;
+    border-radius: 18px;
+    padding-left: 15px;
+    margin: 10px;
+}
+
+input:focus{
+  
+    text-decoration: none;
+}
+
+.ContentCard{
+    color: white;
+    margin-top: 20px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.left-content, .right-content{
+    background-color: #302f2f6b;
+    padding: 5%;
+    border-radius: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.937);
+    width: 35vw;
+    height: 80vh;
+}
+
+.left-content:hover, .right-content:hover{
+   border-color: #64FFDA;
+}
+
+   .subhead2{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 1.5rem;
+        color: #5F85DB;
+        font-weight: 700;
+      }
+      

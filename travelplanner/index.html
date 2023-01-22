@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="main.js"></script> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <nav class="navbar bg-body-none">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <svg className='navbarlogo' xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-airplane" viewBox="0 0 18 18">
+                <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z"/>
+            </svg>
+              <span>Travel Planner</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="container subhead">
+        <!-- Content here -->
+
+        Let us help you plan your next trip
+      </div>
+      <div class="Searchbar"></div>
+      <form class="search" action = "http://localhost:5000/index" method = "post">
+         <input type = "text" name = "home"  class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where are you located?"/>
+         
+      <form action = "http://localhost:5000/index" method = "post">
+         <input type = "text" name = "dest" class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where do you want to go?"/>
+         <Button type = "submit"  class="btn btn-primary mb-3 button-submit">Submit</Button>
+      </form>   
+      </div>
+      <div class="content-container">
+         <div class="container-lg left-content">
+             <div class="vstack gap-3">
+                 <div class="bg-body-none subhead2">Our recommendations for your Trip</div>
+                 <div class="bg-body-none"></div>
+               </div>
+         </div>
+         <div class="container-lg right-content">
+ 
+         </div>
+  
+     </div>
+       
+ </body>
+ </html>
+ 
