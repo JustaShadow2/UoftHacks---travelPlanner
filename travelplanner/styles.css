@@ -60,9 +60,8 @@ a:visited{
     color: white;
   }
   
-  
 
-  .Searchbar{
+.searchbar{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +82,7 @@ a:visited{
     border-radius: 5px;
     color: white;
     font-weight: 800;
-    width: 40%;
+    width: 20%;
     align-self: center;
     margin-top: 10px;
 }
@@ -93,7 +92,7 @@ a:visited{
     
 }
 
-.Searchbar input{
+input{
     width: 30vw;
     height: 5vh;
     text-decoration: none;
@@ -103,7 +102,7 @@ a:visited{
     margin: 10px;
 }
 
-.Searchbar input:focus{
+input:focus{
   
     text-decoration: none;
 }
@@ -135,12 +134,12 @@ a:visited{
    border-color: #64FFDA;
 }
 
-.subhead2{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-size: 1.3rem;
-    color: #5F85DB;
-    font-weight: 700;
-  }
-  
+   .subhead2{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 1.5rem;
+        color: #5F85DB;
+        font-weight: 700;
+      }
+      

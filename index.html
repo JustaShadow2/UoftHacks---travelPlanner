@@ -27,28 +27,27 @@
 
         Let us help you plan your next trip
       </div>
-      <div class="Searchbar"></div>
-      <form class="search" action = "http://localhost:5000/index" method = "post">
-         <input type = "text" name = "home"  class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where are you located?"/>
-         
-      <form action = "http://localhost:5000/index" method = "post">
-         <input type = "text" name = "dest" class="form-control mx-auto" style="width: 30vw; border-radius: 18px;" placeholder="Where do you want to go?"/>
-         <Button type = "submit"  class="btn btn-primary mb-3 button-submit">Submit</Button>
-      </form>   
-      </div>
-      <div class="content-container">
-         <div class="container-lg left-content">
-             <div class="vstack gap-3">
-                 <div class="bg-body-none subhead2">Our recommendations for your Trip</div>
-                 <div class="bg-body-none"></div>
-               </div>
-         </div>
-         <div class="container-lg right-content">
+    <div class="Searchbar">
+        <form class="search" action = "http://localhost:5000/index" method = "post">
+            <!-- <input type="text" name='startLocation' id="startLocation" class="form-control" placeholder="Where do you want to start?"> -->
+            <p>Where do you want to go?</p>
+            <p><input type = "text" name='endLocation' id="endLocation" class="form-control"></p>
+            <p><input type = "submit" value = "submit" class="btn btn-primary mb-3 button-submit">Submit</button></p>
+        </form>
+    </div>
+
+    <div class="content-container">
+        <div class="container-lg left-content">
+            <div class="vstack gap-3">
+                <div class="bg-body-none subhead2">Our recommendations for your Trip</div>
+                <div class="bg-body-none"></div>
+              </div>
+        </div>
+        <div class="container-lg right-content">
+
+        </div>
  
-         </div>
-  
-     </div>
-       
- </body>
- </html>
- 
+    </div>
+      
+</body>
+</html>
