@@ -1,11 +1,11 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request, render_template
+import requests
+from flask import jsonify
+import json
 app = Flask(__name__)
 
 @app.route('/reccomendations/<place>')
 def reccomendations(place):
-    import requests 
-    import json
-
     api_key = "jvFKqmh_l2XRzDI1I9hXuGq0RntzZUhXvuk2lxs9gLFXPaC80uEDBlMyTsHoJYa6aOhDPQDEI8hNUy8COdJdB8gvFv8TIpTGy0teJ5q47SC6643BuQlXRB6_4BzMY3Yx"
     headers = {'Authorization' : 'Bearer {}'.format(api_key)}
     destination = place
@@ -16,8 +16,9 @@ def reccomendations(place):
     req = requests.get(url, params=params, headers=headers)
 
     parsed = json.loads(req.text)
-
-    return{'name': parsed['businesses'][0]['name'], 'rating': parsed['businesses'][0]['rating'], 'name2': parsed['businesses'][1]['name'], 'rating2': parsed['businesses'][1]['rating'], 'name3': parsed['businesses'][2]['name'], 'rating3': parsed['businesses'][2]['rating']}
+    data = parsed['businesses'][0]['name'], parsed['businesses'][0]['rating'], parsed['businesses'][1]['name'], parsed['businesses'][1]['rating'], parsed['businesses'][2]['name'], parsed['businesses'][2]['rating']
+    #send data to console log
+    return render_template('reccomendations.html', data=data)
 
 @app.route('/map/<place>/')
 def map(place):
@@ -28,7 +29,7 @@ def login():
    if request.method == 'POST':
       dest = request.form['dest']
       home = request.form['home']
-      return redirect(url_for('map',place = dest, place2 = home))
+      return redirect(url_for('reccomendations',place = dest, place2 = home))
 #    else:
 #       dest = request.args.get('nm')
 #       return redirect(url_for('success',place = dest))
