@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/reccomendations/<place>')
 def reccomendations(place):
-    api_key = "jvFKqmh_l2XRzDI1I9hXuGq0RntzZUhXvuk2lxs9gLFXPaC80uEDBlMyTsHoJYa6aOhDPQDEI8hNUy8COdJdB8gvFv8TIpTGy0teJ5q47SC6643BuQlXRB6_4BzMY3Yx"
+    api_key = "Your yelp api key"
     headers = {'Authorization' : 'Bearer {}'.format(api_key)}
     destination = place
     url = 'https://api.yelp.com/v3/businesses/search'
@@ -18,7 +18,7 @@ def reccomendations(place):
     data = parsed['businesses'][0]['name'], parsed['businesses'][0]['rating'], parsed['businesses'][1]['name'], parsed['businesses'][1]['rating'], parsed['businesses'][2]['name'], parsed['businesses'][2]['rating']
     #send data to console log
     import openai
-    openai.api_key = ("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")
+    openai.api_key = ("your openai api key")
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=("Give me a 3 day schedule for a trip to {} including {}, {} and {}".format(destination, data[0], data[2], data[4])),
