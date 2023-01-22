@@ -22,7 +22,7 @@ def reccomendations(place):
 
 @app.route('/map/<place>/')
 def map(place):
-    return render_template('wheredoigo.html', place=place)
+    return render_template('mapData.html', place=place)
 
 @app.route('/schedule/<place>')
 def schedule(place):
