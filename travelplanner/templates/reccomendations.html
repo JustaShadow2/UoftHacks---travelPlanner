@@ -154,9 +154,9 @@
       <div class="content-container">
         <div class="container-lg left-content">
             
-                <div class="bg-body-none recs-container">
+                <div class="bg-body-none itn-container">
                     <!--print data from flasktesting.py-->
-                    <div class="recs"><p>{{itinerary}}</p></div>
+                    <div  >{{itinerary}}</p></div>
                     
                 </div>
               
@@ -233,6 +233,16 @@ p span{
     position: absolute;
 }
 
+.itn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    margin-bottom: px;
+}
+
 
 .button-back{
     padding: 0.7rem;  
@@ -253,6 +263,13 @@ p span{
     padding: 4%;
     border-radius: 5px;
     border: 1.5px solid rgba(255, 255, 255, 0.937);
+    width: 30vw;
+    height: 18vh;
+    
+}
+
+.itenary-container p{
+    
     width: 30vw;
     height: 18vh;
     
